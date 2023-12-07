@@ -88,7 +88,7 @@ function TodoList() {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
-            <TableRow sx={{ backgroundColor: "lightBlue" }}>
+            <TableRow sx={{ backgroundColor: "green" }}>
               <TableCell>Name</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Actions</TableCell>
@@ -148,6 +148,15 @@ function TodoList() {
                   {todo.name}
                 </TableCell>
                 <TableCell>{todo.description}</TableCell>
+                <TableCell>
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => handleOnDelete(todo, "current")}
+                  >
+                    Delete
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
